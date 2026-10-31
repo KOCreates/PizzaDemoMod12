@@ -13,6 +13,7 @@ public class PizzaDriverMod12 {
 
     public static void main(String[] args) {
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        String divider = "-".repeat(80);
 
         // Using another class to organize our orders - this will use composition of classes
         Order familyReunion = new Order();  // creates an Order object.
@@ -27,6 +28,7 @@ public class PizzaDriverMod12 {
         noCookFriday.addToOrder(dadsPizza);
         noCookFriday.addToOrder(petsPizza);
 
+        System.out.println(divider);
         System.out.println("Your No Cook Friday Order");
         System.out.println(myPizza.repeatOrder());
         System.out.println(dadsPizza.repeatOrder());
@@ -38,24 +40,27 @@ public class PizzaDriverMod12 {
         Pizza partyPizza = new Pizza("Everything", "extra large", 23.99);
         Pizza aPizza = new Pizza("mushroom", "small", 10.56);
 
-
-        // Testing the Static method quickOrder
-        // You do not need to create a pizza object to use this method you call it
-        // using the class name "Pizza" because it is a static method.
-        Pizza fastDelivery = Pizza.quickOrder("Pepperoni");
-
         familyReunion.addToOrder(yourPizza);
         familyReunion.addToOrder(partyPizza);
         familyReunion.addToOrder(aPizza);
-        familyReunion.addToOrder(fastDelivery);
 
         totalBill = familyReunion.getTotalDue();
 
         // Prints individuals pizzas for Family reunion using the printOrder method
-        System.out.println("Your orders");
+        System.out.println(divider);
+        System.out.println("Your Family Reunion orders");
         System.out.println(familyReunion.printOrder());
-
         System.out.println("Total for Family Reunion $" + decimalFormat.format(totalBill));
+
+
+        // Testing the Static method quickOrder
+        // You do not need to create a pizza object to use this method you call it
+        // using the class name "Pizza" because it is a static method.
+        System.out.println(divider);
+
+        Pizza fastPizza = Pizza.quickOrder("anchovies");
+        System.out.println("Fast Pizza ordered " + fastPizza.repeatOrder());
+
 
     }
 }
