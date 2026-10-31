@@ -9,7 +9,7 @@ import model.Pizza;
 
 import java.text.DecimalFormat;
 
-public class PizzaDriver {
+public class PizzaDriver_Interface {
 
 	public static void main(String[] args) {
 		DecimalFormat decimalFormat = new DecimalFormat("0.00");
