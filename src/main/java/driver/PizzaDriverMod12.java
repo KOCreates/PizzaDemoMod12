@@ -48,6 +48,7 @@ public class PizzaDriverMod12 {
 
         // Prints individuals pizzas for Family reunion using the printOrder method
         System.out.println(divider);
+
         System.out.println("Your Family Reunion orders");
         System.out.println(familyReunion.printOrder());
         System.out.println("Total for Family Reunion $" + decimalFormat.format(totalBill));
@@ -60,6 +61,10 @@ public class PizzaDriverMod12 {
 
         Pizza fastPizza = Pizza.quickOrder("anchovies");
         System.out.println("Fast Pizza ordered " + fastPizza.repeatOrder());
+
+        // Testing overridden to String method with a textBlock
+        System.out.println(divider);
+        System.out.println(partyPizza);
 
 
     }
