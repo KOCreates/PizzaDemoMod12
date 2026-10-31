@@ -20,4 +20,14 @@ public class Order {
 		customerOrderList.add(p);
 		orderTotal += p.getPrice();
 	}
+
+    public String printOrder() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pizza Order\n");
+
+        for (Pizza p : customerOrderList) {
+            sb.append(p.repeatOrder() + "\n");
+        }
+            return sb.toString();
+    }
 }

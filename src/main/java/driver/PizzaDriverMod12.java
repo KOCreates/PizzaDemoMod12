@@ -54,12 +54,10 @@ public class PizzaDriverMod12 {
 		totalBill = familyReunion.getTotalDue();
 
 		
-//		// Prints individuals pizzas 
+//		// Prints individuals pizzas for Family reunion using the printOrder method
 		System.out.println("Your orders");
- 		System.out.println(yourPizza.repeatOrder());
-		System.out.println(partyPizza.repeatOrder());
-		System.out.println(aPizza.repeatOrder());
-		System.out.println(fastDelivery.repeatOrder());
+        System.out.println(familyReunion.printOrder());
+
         System.out.println("Total for Family Reunion $"+decimalFormat.format(totalBill));
 
 
