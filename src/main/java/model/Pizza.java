@@ -1,6 +1,6 @@
-package model;//Pizza Class at end of Module 12
-// We added a static method named QuickOrder. 
-
+package model;
+//Pizza Class that uses inheritance and an interface
+//
 
 public class Pizza extends MenuItem implements Cookable {
 
@@ -82,8 +82,7 @@ public class Pizza extends MenuItem implements Cookable {
     }
 
     //toString methods provides a way to display the objects instance fields using
-    // System.out.println.  This is an overridden method.
-
+    @Override
     public String toString() {
         String result = "";
         result += super.getDescription();
@@ -94,17 +93,23 @@ public class Pizza extends MenuItem implements Cookable {
     }
 
     @Override
+    // returns the necessary oven temp for this coookable item
+    // none -> double
     public double getOvenTemperature() {
         return 425;
     }
 
     @Override
+    // returns a list of ingredients for a cookable item
+    // nong -> String
     public String prepareIngredients() {
         return "Ingredients: " + this.topping + ", sauce, cheese, special seasonings";
     }
 
     @Override
-    public boolean readyForOver() {
+    // returns status of oven for this cookable item
+    // void -> boolean
+    public boolean readyForOven() {
         if (prepareIngredients() != null) {
             return true;
         } else {

@@ -46,7 +46,7 @@ public class PizzaDriver_Interface {
 		System.out.println("Testing the Interface");
 		System.out.println("Temperature: " + yourPizza.getOvenTemperature());
 		System.out.println(yourPizza.prepareIngredients());
-		System.out.println("Ready for the Oven: " + yourPizza.readyForOver());
+		System.out.println("Ready for the Oven: " + yourPizza.readyForOven());
 		
 
 	}

@@ -1,25 +1,22 @@
-//End of Module 11 Version
+//Pizza Class at end of Module 12
+// We added a static method named QuickOrder.
+// This version of the PizzaClass does not use an Interface
 
-public class PizzaMod11 {
+
+import model.MenuItem;
+
+public class PizzaMod12_NoInterface extends MenuItem {
 
 	private String topping;
 	private String size;
 	private double price;
 	private int orderNumber;
-	private static int nextOrderNumber = 1001;   
-	//Static instance field, created once, most often used to count occurrences of objects 
-
-	// Constructors  - we delete the default constructor to prevent object creation
-	// This is a type of input validation. If all components are provided
-	// sometimes the object should not be created.
-
-	
-	// we must use the setSize(size) method to set the size field since
-	// we added some input validation to the sestSize() method 
-	public PizzaMod11(String topping, String size, double price) {
+	private static int nextOrderNumber = 1001;  
+	 
+	public PizzaMod12_NoInterface(String topping, String size, double price) {
 		
 		this.topping = topping;
-		setSize(size);  // replaced this.size = size
+		setSize(size);  // replaced this.size = size;
 		this.price = price;
 		nextOrderNumber++;
 		orderNumber = nextOrderNumber;
@@ -66,11 +63,23 @@ public class PizzaMod11 {
 		this.price = price;
 	}
 
-	// other methods
-	public String repeatOrder() {
+	//This is a static method. It is called with the name of the class from your Driver program
+	public static PizzaMod12_NoInterface quickOrder(String topping){
 
-		String result = "";
-		result = "Order number: " + orderNumber;
+		PizzaMod12_NoInterface p = new PizzaMod12_NoInterface(topping, "large", 9.99);
+
+		return p;
+
+		}
+	
+	// other methods
+	//In Module 12 we show the super class method getDescription() being called. 
+	// Because Pizza extends MenuItem we have access to the getDescription method. 
+	// we use super. because it is a method within the superclass.
+	//
+	public String repeatOrder() {
+		String result = super.getDescription(); // calls superclass getDescription() 
+ 		result += "Order number: " + orderNumber;
 		result += ", Topping: " + topping;
 		result += ", Size: " + size;
 		result += ", Price: $" + price;
@@ -82,6 +91,7 @@ public class PizzaMod11 {
  
 	public String toString() {
 		String result ="";
+		result += super.getDescription();
 		result += "\nPizza: " + topping;
 		result += "\nSize: " + size;
 		result += "\nPrice: " + price;
